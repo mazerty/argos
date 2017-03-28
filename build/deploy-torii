@@ -1,0 +1,2 @@
+COPY resources/deploy-torii/entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
