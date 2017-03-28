@@ -1,0 +1,8 @@
+COPY resources/postgresql/*.patch /tmp/
+RUN install.sh postgresql-9.5 patch gosu &&\
+    patch /usr/share/postgresql/9.5/postgresql.conf.sample /tmp/postgresql.conf.sample.patch &&\
+    patch /usr/share/postgresql/9.5/pg_hba.conf.sample /tmp/pg_hba.conf.sample.patch
+COPY resources/postgresql/entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 5432
+VOLUME /volume

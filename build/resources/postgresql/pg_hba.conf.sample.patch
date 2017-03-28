@@ -1,0 +1,4 @@
+82c82
+< host    all             all             127.0.0.1/32            @authmethodhost@
+---
+> host    all             all             0.0.0.0/0               @authmethodhost@
