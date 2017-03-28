@@ -6,6 +6,7 @@ build() {
   docker build -t $1 .
 }
 
-build mazerty/postgresql core postgresql
+build mazerty/postgresql         core postgresql
+build mazerty/wildfly-postgresql core jdk wildfly wildfly-postgresql
 
 rm Dockerfile
