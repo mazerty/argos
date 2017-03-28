@@ -1,0 +1,6 @@
+RUN install.sh nginx supervisor openssl
+COPY resources/nginx/nginx.conf /etc/nginx/sites-enabled/default
+COPY resources/nginx/supervisor.conf /etc/
+COPY resources/nginx/*.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 80 443
