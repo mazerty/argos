@@ -1,0 +1,3 @@
+COPY resources/dev/.bashrc.patch /tmp/
+RUN install.sh vim bash-completion patch &&\
+    patch /root/.bashrc /tmp/.bashrc.patch
