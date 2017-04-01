@@ -1,0 +1,7 @@
+version: "3"
+services:
+  awscli:
+    image: mazerty/awscli
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
