@@ -2,8 +2,10 @@
 set -e
 
 build() {
+  docker pull $1
+
   cat ${@:2} > Dockerfile
-  docker build -t $1 .
+  docker build --cache-from $1 -t $1 .
 
   docker push $1
 }
