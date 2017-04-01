@@ -1,5 +1,5 @@
 COPY resources/postgresql/*.patch /tmp/
-RUN install.sh postgresql-9.5 patch gosu &&\
+RUN install.sh postgresql-9.5 gosu &&\
     patch /usr/share/postgresql/9.5/postgresql.conf.sample /tmp/postgresql.conf.sample.patch &&\
     patch /usr/share/postgresql/9.5/pg_hba.conf.sample /tmp/pg_hba.conf.sample.patch
 COPY resources/postgresql/entrypoint.sh /usr/local/bin/
