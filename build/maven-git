@@ -1,3 +1,0 @@
-RUN install.sh maven git
-COPY resources/maven-git/gitclonemvn.sh /usr/local/bin/
-VOLUME /root/.m2/repository
