@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-gitclonemvn.sh mazerty java-core install
-gitclonemvn.sh mazerty shika-kami install
-gitclonemvn.sh mazerty shika-ishi install
-gitclonemvn.sh mazerty java-arquillian install
-gitclonemvn.sh mazerty shika-torii flyway:migrate wildfly:deploy -Dmaven.test.skip=true
+mvn-run.sh java-core       install
+mvn-run.sh shika-kami      install
+mvn-run.sh shika-ishi      install
+mvn-run.sh java-arquillian install
+mvn-run.sh shika-torii     flyway:migrate wildfly:deploy -Dmaven.test.skip=true
