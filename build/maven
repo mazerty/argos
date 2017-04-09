@@ -1,3 +1,5 @@
-RUN install.sh maven git
+RUN install.sh maven git &&\
+    mkdir -p /root/.ssh &&\
+    ssh-keyscan -H github.com > /root/.ssh/known_hosts
 COPY resources/maven/*.sh /usr/local/bin/
 VOLUME /root/.m2/repository
