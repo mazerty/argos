@@ -1,0 +1,2 @@
+COPY resources/intellij-torii/*.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
