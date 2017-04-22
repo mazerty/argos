@@ -1,0 +1,14 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: "keypair"
+      ImageId: "ami-060cde69"
+      BlockDeviceMappings:
+        - DeviceName: "/dev/sda1"
+          Ebs:
+            VolumeSize: "20"
