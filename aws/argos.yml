@@ -12,4 +12,5 @@ Resources:
         - DeviceName: "/dev/sda1"
           Ebs:
             VolumeSize: "20"
+      IamInstanceProfile: "argos"
       UserData: !Base64 "#include https://raw.githubusercontent.com/mazerty/idem/master/build/mazerty/argos.sh"
