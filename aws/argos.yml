@@ -1,15 +1,15 @@
 ---
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: 2010-09-09
 
 Resources:
   Instance:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      KeyName: "keypair"
-      ImageId: "ami-060cde69"
+      KeyName: keypair
+      ImageId: ami-060cde69
       BlockDeviceMappings:
-        - DeviceName: "/dev/sda1"
+        - DeviceName: /dev/sda1
           Ebs:
-            VolumeSize: "20"
-      IamInstanceProfile: "argos"
+            VolumeSize: 20
+      IamInstanceProfile: argos
