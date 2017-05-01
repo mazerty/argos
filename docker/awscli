@@ -1,2 +1,0 @@
-RUN install.sh awscli &&\
-    echo "complete -C '/usr/bin/aws_completer' aws" >> /root/.bashrc

@@ -15,7 +15,6 @@ build mazerty/wildfly-postgresql core jdk wildfly wildfly-postgresql
 build mazerty/maven-torii        core jdk maven maven-torii
 build mazerty/nginx              core nginx
 
-build mazerty/awscli             core dev awscli
 build mazerty/intellij-torii     core jdk wildfly wildfly-postgresql maven intellij intellij-torii
 
 rm Dockerfile
