@@ -17,4 +17,5 @@ build mazerty/nginx              core nginx
 
 build mazerty/intellij-torii     core jdk wildfly wildfly-postgresql maven intellij intellij-torii
 
+docker save $(docker image ls -qa) | gzip | aws --region eu-central-1 s3 cp - s3://mazerty-argos/cache.tar.gz
 rm Dockerfile
