@@ -9,6 +9,7 @@ build() {
 }
 
 docker login
+aws --region eu-central-1 s3 cp s3://mazerty-argos/cache.tar.gz - | gunzip | docker load
 
 build mazerty/postgresql         core postgresql
 build mazerty/wildfly-postgresql core jdk wildfly wildfly-postgresql
