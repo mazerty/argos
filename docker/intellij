@@ -1,7 +1,7 @@
 COPY resources/intellij/.gitignore /root/
 WORKDIR /workspace
-RUN wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.tar.gz &&\
-    wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.tar.gz.sha256 &&\
+RUN wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.2.tar.gz &&\
+    wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.2.tar.gz.sha256 &&\
     sha256sum -c --status ideaIU-*.tar.gz.sha256 &&\
     tar xf ideaIU-*.tar.gz &&\
     mv idea-IU-*/ /opt/intellij &&\
