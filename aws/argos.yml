@@ -8,4 +8,8 @@ Resources:
       InstanceType: t2.micro
       KeyName: keypair
       ImageId: ami-060cde69
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 20
       IamInstanceProfile: argos
