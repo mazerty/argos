@@ -1,4 +1,4 @@
-set -e
+set -ex
 
 aws --region eu-central-1 cloudformation create-stack --stack-name argos --template-body file://argos.yml
 aws --region eu-central-1 cloudformation wait stack-create-complete --stack-name argos
