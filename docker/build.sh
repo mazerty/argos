@@ -28,7 +28,7 @@ build mazerty/maven-torii        core jdk maven maven-torii
 build mazerty/nginx              core nginx
 
 # builds development images
-build mazerty/intellij-torii     core jdk wildfly wildfly-postgresql maven intellij intellij-torii
+build mazerty/intellij-torii     core jdk maven intellij wildfly wildfly-postgresql intellij-torii
 
 # saves docker cache into s3
 docker image prune
