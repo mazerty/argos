@@ -1,5 +1,5 @@
 FROM ubuntu:xenial-20170410
 COPY resources/core/install.sh /usr/local/bin/
 RUN install.sh wget patch
-RUN wget -O /usr/local/bin/idem.sh https://raw.githubusercontent.com/mazerty/idem/master/src/idem.sh &&\
+RUN wget -qO /usr/local/bin/idem.sh https://raw.githubusercontent.com/mazerty/idem/master/src/idem.sh &&\
     chmod +x /usr/local/bin/idem.sh

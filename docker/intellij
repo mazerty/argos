@@ -1,11 +1,11 @@
 COPY resources/intellij/.gitignore /root/
-WORKDIR /workspace
 RUN wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.2.tar.gz &&\
     wget -q https://download.jetbrains.com/idea/ideaIU-2017.1.2.tar.gz.sha256 &&\
-    sha256sum -c --status ideaIU-*.tar.gz.sha256 &&\
-    tar xf ideaIU-*.tar.gz &&\
-    mv idea-IU-*/ /opt/intellij &&\
-    rm ideaIU-*.tar.gz* &&\
+    sha256sum -c --status ideaIU-2017.1.2.tar.gz.sha256 &&\
+    tar xf ideaIU-2017.1.2.tar.gz &&\
+    mv idea-IU-* /opt/intellij &&\
+    rm ideaIU-2017.1.2.tar.gz* &&\
     git config --global core.excludesfile /root/.gitignore
 ENTRYPOINT ["/opt/intellij/bin/idea.sh"]
+WORKDIR /workspace
 VOLUME /root/.IntelliJIdea2017.1 /workspace

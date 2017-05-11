@@ -2,8 +2,8 @@ RUN wget -q https://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final
     tar --no-same-owner -xf wildfly-10.0.0.Final.tar.gz &&\
     mv wildfly-10.0.0.Final /opt/wildfly &&\
     rm wildfly-10.0.0.Final.tar.gz
-COPY resources/wildfly/wildfly.conf /tmp/
 COPY resources/wildfly/wildfly-conf.sh /usr/local/bin/
+COPY resources/wildfly/wildfly.conf /tmp/
 RUN wildfly-conf.sh /tmp/wildfly.conf &&\
     /opt/wildfly/bin/add-user.sh admin admin
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
