@@ -23,13 +23,16 @@ docker login
 aws --region eu-central-1 s3 cp s3://mazerty-argos/cache.tar.gz - | gunzip | docker load
 
 # builds production images
-build mazerty/postgresql         core postgresql
-build mazerty/wildfly-postgresql core jdk wildfly wildfly-postgresql
-build mazerty/maven-torii        core jdk maven maven-torii
-build mazerty/nginx              core nginx
+build mazerty/postgresql                  core postgresql
+build mazerty/wildfly-postgresql          core jdk wildfly wildfly-postgresql
+build mazerty/maven-torii                 core jdk maven maven-torii
+build mazerty/nginx                       core nginx
 
 # builds development images
-build mazerty/intellij-torii     core jdk maven intellij wildfly wildfly-postgresql intellij-torii
+build mazerty/intellij                    core jdk maven intellij
+build mazerty/intellij-wildfly            core jdk maven intellij wildfly
+build mazerty/intellij-wildfly-postgresql core jdk maven intellij wildfly wildfly-postgresql
+build mazerty/intellij-torii              core jdk maven intellij wildfly wildfly-postgresql intellij-torii
 
 # saves docker cache into s3
 docker save $(docker image ls -qa) | gzip > /tmp/cache.tar.gz
