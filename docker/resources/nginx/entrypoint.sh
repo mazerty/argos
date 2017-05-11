@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/sh -e
 
 certificate.sh
 exec supervisord -c /etc/supervisor.conf

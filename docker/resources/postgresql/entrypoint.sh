@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
 data=/volume/data
 bin=/usr/lib/postgresql/9.5/bin

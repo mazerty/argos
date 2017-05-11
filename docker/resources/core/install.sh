@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/sh -e
 
 apt-get update
 apt-get -y install $@

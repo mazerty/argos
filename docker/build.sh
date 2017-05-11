@@ -1,5 +1,4 @@
-#!/bin/bash
-set -ex
+#!/bin/bash -ex
 
 build() {
   # creates the Dockerfile from the various layers

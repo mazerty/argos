@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/sh -e
 
 mvn-run.sh java-core       install
 mvn-run.sh shika-kami      install

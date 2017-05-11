@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
 [ -d $1 ] || git clone git@github.com:mazerty/$1.git
 cd $1
