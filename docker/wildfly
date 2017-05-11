@@ -1,13 +1,11 @@
-WORKDIR /opt/wildfly
 RUN wget -q https://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final.tar.gz &&\
-    tar --no-same-owner -xf wildfly-*.Final.tar.gz &&\
-    mv wildfly-*.Final/* . &&\
-    rm -rf wildfly-*.Final*
+    tar --no-same-owner -xf wildfly-10.0.0.Final.tar.gz &&\
+    mv wildfly-10.0.0.Final /opt/wildfly &&\
+    rm wildfly-10.0.0.Final.tar.gz
 COPY resources/wildfly/wildfly.conf /tmp/
-RUN bin/standalone.sh --admin-only & sleep 30 &&\
-    bin/jboss-cli.sh -c --file=/tmp/wildfly.conf && sleep 30 &&\
-    rm -rf standalone/configuration/standalone_xml_history &&\
-    bin/add-user.sh admin admin
+COPY resources/wildfly/wildfly-conf.sh /usr/local/bin/
+RUN wildfly-conf.sh /tmp/wildfly.conf &&\
+    /opt/wildfly/bin/add-user.sh admin admin
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
-ENTRYPOINT ["bin/standalone.sh"]
+ENTRYPOINT ["/opt/wildfly/bin/standalone.sh"]
 EXPOSE 8080

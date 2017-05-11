@@ -1,5 +1,4 @@
 COPY resources/wildfly-postgresql/wildfly-postgresql.conf /tmp/
-RUN wget -q https://jdbc.postgresql.org/download/postgresql-42.1.1.jar &&\
-    bin/standalone.sh --admin-only & sleep 30 &&\
-    bin/jboss-cli.sh -c --file=/tmp/wildfly-postgresql.conf && sleep 30 &&\
-    rm -rf postgresql-*.jar standalone/configuration/standalone_xml_history
+RUN wget -qO /tmp/postgresql.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jar &&\
+    wildfly-conf.sh /tmp/wildfly-postgresql.conf &&\
+    rm /tmp/postgresql.jar
