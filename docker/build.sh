@@ -11,9 +11,8 @@ build() {
   # pushes the image into the registry
   docker push $1
 
-  # cleans some stuff
+  # cleans the dockerfile
   rm Dockerfile
-  docker image prune -f
 }
 
 # logs into docker registry
@@ -35,5 +34,6 @@ build mazerty/intellij-wildfly-postgresql core jdk maven intellij wildfly wildfl
 build mazerty/intellij-torii              core jdk maven intellij wildfly wildfly-postgresql intellij-torii
 
 # saves docker cache into s3
+docker image prune -f
 docker save $(docker image ls -qa) | gzip > /tmp/cache.tar.gz
 aws --region eu-central-1 s3 cp /tmp/cache.tar.gz s3://mazerty-argos/cache.tar.gz
