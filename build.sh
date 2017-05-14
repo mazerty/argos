@@ -22,6 +22,7 @@ aws --region eu-central-1 s3 cp s3://mazerty-argos/cache.tar.gz - | gunzip | doc
 
 # builds production images
 build mazerty/postgresql                  core postgresql
+build mazerty/wildfly                     core jdk wildfly
 build mazerty/wildfly-postgresql          core jdk wildfly wildfly-postgresql
 build mazerty/maven-torii                 core jdk maven maven-torii
 build mazerty/nginx                       core nginx
