@@ -1,0 +1,2 @@
+COPY resources/intellij-shuryo/*.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
