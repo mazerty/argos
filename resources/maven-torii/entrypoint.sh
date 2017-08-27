@@ -1,7 +1,5 @@
 #!/bin/sh -e
 
-mvn-run.sh java-core       install
-mvn-run.sh shika-kami      install
-mvn-run.sh shika-ishi      install
-mvn-run.sh java-arquillian install
-mvn-run.sh shika-torii     flyway:migrate wildfly:deploy -Dmaven.test.skip=true
+git clone https://github.com/mazerty/shika-torii.git
+cd shika-torii/
+mvn flyway:migrate wildfly:deploy -Dmaven.test.skip=true
