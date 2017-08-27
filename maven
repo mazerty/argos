@@ -3,5 +3,4 @@ RUN install.sh maven git &&\
     ssh-keyscan -H github.com > /root/.ssh/known_hosts &&\
     git config --global user.name Mazerty &&\
     git config --global user.email mazerty@gmail.com
-COPY resources/maven/*.sh /usr/local/bin/
 VOLUME /root/.m2/repository
