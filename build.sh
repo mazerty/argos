@@ -29,8 +29,6 @@ build mazerty/nginx                       core nginx
 
 # builds development images
 build mazerty/intellij                    core jdk maven intellij
-build mazerty/intellij-wildfly            core jdk maven intellij wildfly
-build mazerty/intellij-wildfly-postgresql core jdk maven intellij wildfly wildfly-postgresql
 build mazerty/intellij-torii              core jdk maven intellij wildfly wildfly-postgresql intellij-torii
 build mazerty/intellij-shuryo             core jdk maven intellij wildfly intellij-shuryo
 
