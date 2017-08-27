@@ -1,9 +1,5 @@
 #!/bin/bash -e
 
-data=/volume/data
-bin=/usr/lib/postgresql/9.5/bin
+idem.py run docker/postgresql
 
-idem.sh "mkdir $data && chown postgres:postgres $data" /volume/.idem
-idem.sh "gosu postgres $bin/initdb --locale=C.UTF-8 -D $data" /volume/.idem
-
-exec gosu postgres $bin/postgres -D $data
+exec gosu postgres /usr/lib/postgresql/9.5/bin/postgres -D /volume/data
