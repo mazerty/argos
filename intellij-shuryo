@@ -1,2 +1,2 @@
-COPY resources/intellij-shuryo/*.sh /usr/local/bin/
+COPY resources/intellij-shuryo/entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
