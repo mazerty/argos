@@ -1,5 +1,5 @@
 FROM ubuntu:xenial-20170802
 COPY resources/core/install.sh /usr/local/bin/
-RUN install.sh python wget patch
+RUN install.sh wget patch
 RUN wget -qO /usr/local/bin/idem.py https://raw.githubusercontent.com/mazerty/idem/master/idem.py &&\
     chmod +x /usr/local/bin/idem.py
