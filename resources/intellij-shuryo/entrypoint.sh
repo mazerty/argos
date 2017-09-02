@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 idem.py run docker/intellij-shuryo
 
