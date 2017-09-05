@@ -1,5 +1,6 @@
 COPY resources/intellij/.gitignore /root/
-RUN wget -q https://download.jetbrains.com/idea/ideaIU-2017.2.3.tar.gz &&\
+RUN install.sh openjdk-8-source &&\
+    wget -q https://download.jetbrains.com/idea/ideaIU-2017.2.3.tar.gz &&\
     wget -q https://download.jetbrains.com/idea/ideaIU-2017.2.3.tar.gz.sha256 &&\
     sha256sum -c --status ideaIU-2017.2.3.tar.gz.sha256 &&\
     tar xf ideaIU-2017.2.3.tar.gz &&\
